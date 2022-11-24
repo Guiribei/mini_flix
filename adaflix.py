@@ -7,7 +7,10 @@ def main():
     while True:
         movies = get_movies()
         print(tabulate(table, tablefmt="heavy_grid"))
-        option = int(input("> "))
+        try:
+            option = int(input("> "))
+        except:
+            continue
         if option == 1:
             add_movie(movies)
         elif option == 2:
