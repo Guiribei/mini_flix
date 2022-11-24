@@ -1,7 +1,9 @@
 # mini_flix
+
 Group work as a final project to the first module of Santander Coders at Ada (Let's Code)
 
-### Our requeriments were:
+
+### 🎬 Our requeriments were:
 
 - Register new films in the catalogue 
 - Implement a search strategy for registered films
@@ -12,6 +14,6 @@ Group work as a final project to the first module of Santander Coders at Ada (Le
 - Bonus: Create a strategy for saving calendar data to a file.
 
 
-Co-workers:
+🎥 Co-workers:
 André Luís &
 Hugo Azevedo
