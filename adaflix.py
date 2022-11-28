@@ -1,16 +1,29 @@
-import os
-from tabulate import tabulate
+# Loads the functions to be used from an aux file
 from utils import *
 
 def main():
-    table = [['===== Adaflix ====='], ['1 - Adicionar filme'], ['2 - Atualizar filme'], ['3 - Excluir filme'], ['4 - Buscar filme'], ['5 - Listar filmes'], ['6 - Limpar tela'], ['7 - Sair']]
+
+    ''' Main function'''
+
     while True:
+
+        # Ensures there is a csv file with the info
+        check_database()
+        
+        # Prompts a menu to the user
+        display_menu()
+        
+        # Makes a dictionary to handle the csv file content
         movies = get_movies()
-        print(tabulate(table, tablefmt="heavy_grid"))
+
+        # Ensure the user inputs a number
         try:
             option = int(input("> "))
         except:
+            print('\nEnter the number that corresponds to the desired option: ')
             continue
+
+        # Chooses the option according to the entry
         if option == 1:
             add_movie(movies)
         elif option == 2:
@@ -20,12 +33,16 @@ def main():
         elif option == 4:
             find_movie(movies)
         elif option == 5:
-            list_movies(movies)
+            list_all_movies(movies)
         elif option == 6:
-            os.system('cls' if os.name == 'nt' else 'clear')
+            find_genres(movies)
         elif option == 7:
+            os.system('cls' if os.name == 'nt' else 'clear')
+        elif option == 8:
             break
+
+        # Prompts a error message in case of a number different from all the options above
         else:
-            print('Opção escolhida inválida. Por favor, tente novamente...')
+            print('Invalid option. Please, try again...')
 
 main()
